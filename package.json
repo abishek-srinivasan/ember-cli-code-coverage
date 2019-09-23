@@ -35,7 +35,7 @@
     "exists-sync": "0.0.4",
     "extend": "^3.0.0",
     "fs-extra": "^5.0.0",
-    "istanbuljs": "git+ssh://git@github.com:abishek-srinivasan/istanbuljs.git#6257ad00afa42ce750f19641f42224b35a5949e1",
+    "istanbul-api": "^1.1.14",
     "node-dir": "^0.1.16",
     "rsvp": "^4.8.1",
     "walk-sync": "^0.3.2"
