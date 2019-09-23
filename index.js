@@ -25,6 +25,8 @@ function requireBabelPlugin(pluginName) {
 // Regular expression to extract the file extension from a path.
 const EXT_RE = /\.[^\.]+$/;
 
+let fileLookup = null;
+
 module.exports = {
   name: 'ember-cli-code-coverage',
 
@@ -39,7 +41,7 @@ module.exports = {
   included: function() {
     this._super.included.apply(this, arguments);
 
-    this.fileLookup = {};
+    fileLookup = this.fileLookup = {};
 
     if (!this._registeredWithBabel && this._isCoverageEnabled()) {
       let checker = new VersionChecker(this.parent).for('ember-cli-babel', 'npm');
@@ -89,7 +91,7 @@ module.exports = {
     attachMiddleware(app, {
       configPath: this.project.configPath(),
       root: this.project.root,
-      fileLookup: this.fileLookup
+      fileLookup: fileLookup
     });
   },
 
